@@ -1,0 +1,99 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>First AngularJS Page</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+</head>
+<body background="./img/glyphicons-halflings-white.png">
+<div  ng-controller="Controller">
+<form name="user">
+<fieldset>
+<div class="container" >
+            <label><b>EnterName:</b></label>
+            <input name="Name" ng-model="Name" type="text" required placeholder="Enter Name Here">
+            <span class="error" ng-show="user.Name.$error.required">Required!</span>
+            </div>
+            <div class="container">
+            <label><b>Birthdate:</b></label>
+            <input type="date" id="DOB" ng-model="DOB"/>
+            </div>
+            <div class="container">
+            <label ><b>Password:</b></label>
+            <input type="password"  ng-model="Password" placeholder="Enter Password" />
+            </div>
+            <div  class="container" >
+            <label><b>Email  ID  :</b></label>
+            <input type="email" name="Email" ng-model="Email" required  placeholder="xxx@domain.com"/>
+                <span class="error" ng-show="user.Email.$error.required">Required!</span>
+            </div>
+            <div  class="container">
+            <label> <b>Gender :</b></label>
+            <input type="radio"  value="Male"  ng-model="Gender"/>Male
+            <input type="radio"  value="Female"  ng-model="Gender"/>FeMale
+            </div><br>
+            <div  class="container">
+            <label for="lang"><b>Language:</b></label>
+            <input type="radio"  value="Hindi" id="lang" ng-model="Language"/>Hindi
+            <input type="radio"  value="English" id="lang1" ng-model="Language"/>English
+            <input type="radio"  value="Punjabi" id="lang2" ng-model="Language"/>Punjabi
+            </div><br>
+            <div class="container">
+            <label for="Select"><b>Hobbies:</b></label>
+            <select id="select" ng-model="Hobbies">
+            <option value="Reading Books" selected>Reading Books</option>
+            <option value="Playing Cricket">Playing Cricket</option>
+            <option value="Travelling">Travelling</option>
+            <option value="Watching Movie">Watching Movie</option>
+            </select>
+            </div>
+
+            <div class="container">
+            <label ><b>AGE:</b></label>
+             0:<input type="range"  ng-model="AGE">100
+           </div><br>
+    <div class="container" id="file-list">
+        <label><b>UploadImage</b></label>
+        <input id="files-upload" type="file">
+        <img id="uploadImg" ng-modal="imageSrc"  ng-src="{{imageSrc}}" style="width:100px;"></div >     <br>
+           <button class="btn btn-primary" ng-click="insertRecords()" >Save! </button>
+           <button class="btn btn-danger" ng-click="updateContact()">Update Record </button>
+           </fieldset>
+           </form> <br> <br>
+        <button class="btn  btn-primary" ng-click="showRecord()">Show Record</button>
+        <button class="btn btn-danger" ng-click="dropTable()">DROP TABLE</button><br> <br>
+        <table  width="100%" border="1">
+        <th>Id</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Password</th>
+        <th>EmailId</th>
+        <th>Gender</th>
+        <th>Language</th>
+        <th>Hobbies</th>
+        <th>Uploaded Image</th>
+        <th>AGE</th>
+    <tr ng-repeat = "users in master " ng-class-even="'even'" >
+    <td class="row">{{users.id}}.</td>
+    <td>{{users.Name|uppercase}}</td>
+    <td>{{users.DOB}}</td>
+    <td>{{users.Password}}</td>
+    <td>{{users.Email}}</td>
+    <td>{{users.Gender}}</td>
+    <td>{{users.Language}}</td>
+    <td>{{users.Hobbies}}</td>
+        <td><img ng-src="{{users.Image}}" style="width:90px;"></td>
+    <td>{{users.AGE}}</td>
+    <td> <button class="btn btn-primary" ng-click="editContact(users.id)">Edit</button>
+    <button class="btn btn-danger" ng-click="deleteContact(users.id)"> <img src="./img/images.jpg" height="15" width="30"/>Delete</button></td>
+     </tr>
+     </table>
+     <script src="./js/fileUpload.js"></script>
+</div>
+</body>
+</html>
+
+
+

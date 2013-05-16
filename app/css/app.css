@@ -1,0 +1,70 @@
+
+fieldset
+{
+    background-color:floralwhite;
+  border-color:red;
+
+}
+.input {
+    margin: 20px;
+
+
+}
+
+.edit {
+    font-weight: bold;
+    color: green;
+}
+
+.delete {
+    font-weight: bold;
+    color: #d866ff;
+}
+
+
+
+ .save
+ {
+     color: green;
+     font-weight: bold;
+
+ }
+
+ table{
+
+     border:red ;
+ }
+     h1
+     {
+         color:#ee5f5b;
+     }
+
+     .delete
+     {
+         color: red;
+     }
+  th{
+      background-color: snow;
+      color: blue;
+  }
+
+  .show
+  {
+      color: green;
+  }
+
+  .even
+  {
+      color: brown;
+  }
+
+  .row{
+      color:red;
+  }
+
+  .update
+  {
+      color: darkred;
+
+  }
+
