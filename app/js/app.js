@@ -77,7 +77,7 @@ function Controller($scope) {
                 $scope.Gender = $scope.master[i].Gender;
                 $scope.Language = $scope.master[i].Language;
                 $scope.Hobbies = $scope.master[i].Hobbies;
-                $scope.imageSrc = $scope.tableData[i].Image;
+                $scope.imageSrc = $scope.master[i].Image;
                 $scope.AGE=$scope.master[i].AGE;
                        }
         }
